@@ -1,0 +1,81 @@
+#main-page {
+    align-items: center; display: flex; height: 100%; justify-content: center; width: 100%;
+
+    .mdl-grid {
+     align-items: center; box-sizing: border-box; height: 100%; padding-bottom: 1rem; padding-top: 1rem;
+    }
+}
+
+.main-page__header {
+    align-items: center;  display: flex;  flex-direction: row; justify-content: center;
+
+    picture { height: 170px; margin: 0 auto; width: 170px; }
+
+    img { border-radius: 100%; width: 100%; }
+}
+
+.main-page__big-button {
+    border-radius: 100%; box-shadow: none; cursor: pointer; display: block; font-size: 1rem; height: 170px; margin: 0 auto; width: 170px;
+}
+
+.main-page__button-group {
+   align-items: center;  display: flex; flex-direction: column; justify-content: center; width: 100%;
+
+        button {
+            margin-bottom: .25rem; width: 100%;
+            &:last-of-type { margin: 0;}
+        }
+
+}
+
+.main-page__message {
+    align-items: center; display: flex; flex-direction: column; justify-content: center;
+
+    h2 {
+        font-size: 1.5rem; margin: 0;
+    }
+
+    form {
+        width: 100%;
+
+        .mdl-textfield {
+            width: 100%;
+        }
+    }
+
+    ul {
+        padding-left: 1rem;
+    }
+
+    li {
+        font-size: 1rem;
+    }
+}
+
+.main__page-deeds {
+    align-items: center; display: flex; justify-content: center; font-size: 3rem;
+
+    i {
+      align-items: center; display: flex;  width: 50px; height: 50px; justify-content: center; font-size: 40px !important;
+    }
+
+    span {
+        margin: 0 1rem 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .main-page__button-group {
+        align-items: center;  flex-direction: row; justify-content: center;
+
+        button { margin: 0 1rem 0 0; width: 100%; }
+        button {
+            &:last-of-type { margin: 0;}
+        }
+
+
+
+    }
+
+}

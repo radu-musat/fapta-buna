@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="web/css/material.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="web/css/app.css">
+
+        <script src="web/js/material.min.js"></script>
+        <script src="web/js/vue/vue.js" defer></script>
+        <script src="web/js/app.js" defer></script>
+
+        <title>Facem Noi</title>
+    </head>
+    <body>
+            <main class="mdl-layout__content" id="main-page">
+                <div class="mdl-grid">
+
+                    <header class="mdl-cell mdl-cell--12-col main-page__header">
+                        <picture class="main-page__logo">
+                            <img src="web/media/images/facem-noi.jpeg" alt="logo">
+                        </picture>
+                    </header>
+
+
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <button class="main-page__big-button mdl-button mdl-js-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" @click="goodDeeds++">Fapta bună +1</button>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--12-col main-page__message">
+                        <h2>Mesaje</h2>
+                        <ul>
+                            <li v-for="message of messages">{{message}}</li>
+                        </ul>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <template  v-if="activeBlock === 'buttons' ">
+                            <div class="main-page__button-group">
+                                <button class="mdl-button mdl-js-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" @click="displayBlock('history')">Istoric</button>
+                                <button class="mdl-button mdl-js-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" @click="displayBlock('graphics')">Grafice</button>
+                                <button class="mdl-button mdl-js-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" @click="displayBlock('deeds')">Nr. Total Fapte Bune</button>
+                            </div>
+                        </template>
+
+
+                        <template v-if="activeBlock === 'history' ">
+                            <i class="mdl-icon-toggle__label material-icons" @click="displayBlock('buttons')">backspace</i>
+                            continut istoric
+                        </template>
+
+                        <template v-if="activeBlock === 'graphics' ">
+                            <i class="mdl-icon-toggle__label material-icons" @click="displayBlock('buttons')">backspace</i>
+                            continut grafice
+                        </template>
+
+                        <template v-if="activeBlock === 'deeds' ">
+                            <label class="main__page-deeds">
+                                <i class="mdl-icon-toggle__label material-icons" @click="displayBlock('buttons')">backspace</i>
+                                <span>{{ goodDeeds }}</span>
+                                <i class=" material-icons">favorite</i>
+                            </label>
+                        </template>
+                    </div>
+                </div>
+            </main>
+
+    </body>
+</html>
